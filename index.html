@@ -214,6 +214,9 @@ nav a:hover{opacity:1}
 .campo textarea{resize:vertical;min-height:54px}
 .campo input::placeholder,.campo textarea::placeholder{color:rgba(234,216,182,.4)}
 .campo input:focus,.campo select:focus,.campo textarea:focus{border-color:#fff}
+.aceite{display:flex;gap:14px;align-items:flex-start;margin-top:clamp(30px,4vw,48px);max-width:46em;font-size:.94rem;line-height:1.6;opacity:.92;cursor:pointer}
+.aceite input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--creme);cursor:pointer}
+.aceite a{color:var(--creme)}
 .erro{color:#e6f0d8;font-size:.92rem;min-height:1.4em;margin-top:6px}
 .envia{margin-top:clamp(36px,5vw,60px);display:flex;flex-wrap:wrap;align-items:center;gap:28px}
 .nota{font-size:.94rem;opacity:.8;max-width:30em}
@@ -251,7 +254,8 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
 .ft h4{font-weight:400;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
 .ft ul{list-style:none;display:grid;gap:8px;font-size:.98rem}
 .ft a{text-decoration:none;opacity:.9}.ft a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.cr{margin-top:44px;font-size:.78rem;opacity:.5}
+.cr{margin-top:44px;font-size:.78rem;opacity:.65;line-height:1.9}
+.cr a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:720px){.ft{grid-template-columns:1fr}}
 
 /* botão fixo celular */
@@ -470,6 +474,9 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
         <p class="erro" id="erro" role="alert"></p>
       </div>
 
+      <label class="aceite"><input type="checkbox" id="lgpd"><span>Li a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e concordo que a Aline use o que eu informar, inclusive dados sobre saúde e alimentação (restrições, alergias, plano de nutricionista), apenas para avaliar e combinar o atendimento. Posso retirar esse consentimento quando quiser.</span></label>
+      <p class="erro" id="erro2" role="alert"></p>
+
       <div class="envia">
         <button class="btn cheio" type="submit">Enviar para a Aline <span class="ar" aria-hidden="true"></span></button>
         <p class="nota">Abre o WhatsApp com a sua mensagem pronta. O valor é combinado na conversa, pensado para a sua casa.</p>
@@ -517,7 +524,7 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
       <div><h4>Contato</h4><ul><li><a href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (69) 99600-0030</a></li><li><a href="https://instagram.com/chefalinefonseca01_" target="_blank" rel="noopener">@chefalinefonseca01_</a></li></ul></div>
       <div><h4>Atendimento</h4><ul><li>Brusque e região, SC</li><li>Na sua casa</li></ul></div>
     </div>
-    <p class="cr">© Aline Fonseca · Personal Chef. A Aline não prescreve dietas: isso é atividade privativa do nutricionista (Lei nº 8.234/1991, art. 3º, VIII). Ela cozinha a partir do plano que você já tem e não substitui profissional de saúde.</p>
+    <p class="cr"><a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a><br>© Aline Fonseca · Personal Chef. A Aline não prescreve dietas: isso é atividade privativa do nutricionista (Lei nº 8.234/1991, art. 3º, VIII). Ela cozinha a partir do plano que você já tem e não substitui profissional de saúde.</p>
   </div>
 </footer>
 
@@ -591,9 +598,10 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
   function vals(n){return $$('input[name='+n+']:checked',form).map(function(i){return i.value})}
   form.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var nome=form.nome.value.trim(),local=form.local.value.trim();
+    var nome=form.nome.value.trim(),local=form.local.value.trim(),e2=$('#erro2');e2.textContent='';
     if(!nome||!local){erro.textContent='Precisamos do seu nome e do seu bairro e cidade para a Aline saber por onde começar.';(!nome?form.nome:form.local).focus();return}
     erro.textContent='';
+    if(!$('#lgpd').checked){e2.textContent='Para enviar, marque o aceite da Política de Privacidade.';$('#lgpd').focus();return}
     var g=vals('gosto'),r=vals('rest');
     var msg='Olá, Aline! Vim pelo seu site e gostaria de um lugar na sua agenda.\n\n'+
       'Nome: '+nome+'\n'+

@@ -6,6 +6,7 @@
 <title>Como funciona · Aline Fonseca</title>
 <meta name="description" content="Como funciona ter uma personal chef na sua casa: conversa, ingredientes, descongelamento, o dia do atendimento e o que a Aline precisa da sua cozinha.">
 <meta name="theme-color" content="#2F4A3A">
+<link rel="canonical" href="https://chef-aline-fonseca.vercel.app/como-funciona">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
@@ -15,52 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-.dec.ic{position:static;display:block;width:fit-content;opacity:.9;transform:none;animation:none;color:var(--creme)}
-.dec.ic svg{height:58px;width:auto}
-.ph{background:radial-gradient(60% 75% at 15% 100%,#3a5a47 0,transparent 62%),radial-gradient(45% 55% at 95% 5%,rgba(142,155,120,.30),transparent 62%),var(--verde);color:var(--creme);min-height:78svh;display:flex;align-items:flex-end;position:relative;overflow:hidden;isolation:isolate}
-.ph::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.10;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-.ph .decor{z-index:-1}
-.ph-in{padding:150px 0 clamp(56px,9vh,110px);position:relative;z-index:1}
-.ph h1{font-size:clamp(2.4rem,8vw,7rem);max-width:10em;margin:22px 0 28px}
-.ph h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
-.ph h1 .ln>span{display:block;transform:translateY(105%);animation:up 1.3s var(--ease) forwards}
-.ph h1 .ln:nth-child(2)>span{animation-delay:.14s}
-@keyframes up{to{transform:none}}
-.ph p.lead{max-width:34em;font-size:1.15rem;opacity:0;animation:fade 1.2s .7s var(--ease) forwards}
-@keyframes fade{to{opacity:1}}
-.como .esq .moldura{max-width:380px}
-.passos p+p{margin-top:10px}
-.passos .nota-i{margin-top:14px;font-size:.92rem;border-left:1px solid var(--verde);padding-left:14px;color:var(--suave)}
-.req{background:var(--verde-esc);color:var(--creme);padding:clamp(90px,13vw,190px) 0;position:relative}
-.req .decor{z-index:0}
-.req .wrap{position:relative;z-index:1}
-.req h2{margin:18px 0 18px;max-width:11em}
-.req .intro{max-width:34em;opacity:.85;margin-bottom:clamp(36px,5vw,64px)}
-.rq-g{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,24px)}
-.rq{border:1px solid rgba(234,216,182,.3);padding:28px 26px 30px;transition:border-color .4s,background .4s}
-.rq:hover{border-color:var(--creme);background:rgba(234,216,182,.04)}
-.rq .dec.ic{margin-bottom:18px;display:block}
-.rq h3{margin-bottom:8px}
-.rq p{opacity:.8;font-size:.98rem;line-height:1.6}
-@media(max-width:900px){.rq-g{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.rq-g{grid-template-columns:1fr}}
-.grave{background:var(--areia);padding:clamp(90px,12vw,170px) 0;position:relative}
-.grave .decor{z-index:0}
-.grave-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,130px);position:relative;z-index:1}
-.grave h2{color:var(--verde);margin:18px 0 0}
-.grave p{max-width:34em;margin-bottom:18px;font-size:1.06rem}
-.grave ul{list-style:none;margin:26px 0;border-top:1px solid rgba(47,74,58,.3)}
-.grave li{padding:16px 0;border-bottom:1px solid rgba(47,74,58,.3);display:flex;gap:18px;align-items:baseline}
-.grave li b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.2rem;color:var(--verde);min-width:2em}
-@media(max-width:820px){.grave-g{grid-template-columns:1fr}}
-.cta{background:var(--noite);color:var(--creme);padding:clamp(90px,13vw,190px) 0;position:relative;overflow:hidden}
-.cta .decor{z-index:0}
-.cta .wrap{position:relative;z-index:1}
-.cta h2{max-width:10em;margin:16px 0 22px}
-.cta p.l{max-width:30em;font-size:1.1rem;opacity:.88;margin-bottom:34px}
-.cta .ac{display:flex;flex-wrap:wrap;gap:26px;align-items:center}
-</style>
+<link rel="stylesheet" href="css/como.css">
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -173,41 +129,8 @@
 </footer>
 
 <script src="decor.js"></script>
-<script>
-(function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce)document.documentElement.classList.add('noanim');
-  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
-  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){(e.target._t||e.target).classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -6% 0px'}):null;
-  $$('.rv,.cv').forEach(function(el){if(!io){el.classList.add('in');return}if(el.classList.contains('cv')){var h=el.parentElement;h._t=el;io.observe(h)}else io.observe(el)});
-  var li=$$('#lista li');
-  var pio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting)})},{rootMargin:'-38% 0px -38% 0px'}):null;
-  li.forEach(function(x){pio?pio.observe(x):x.classList.add('on')});
-  var hd=$('#hd'),prog=$('#prog'),lastY=0,tk=false,vh=innerHeight;
-  function frame(){tk=false;var y=scrollY,H=document.documentElement.scrollHeight-vh;prog.style.transform='scaleX('+(H>0?y/H:0)+')';hd.classList.toggle('solid',y>40);hd.classList.toggle('hide',y>vh*.5&&y>lastY+4);if(y<lastY-4)hd.classList.remove('hide');lastY=y;
-    if(!reduce)$$('[data-par]').forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<-100||r.top>vh+100)return;el.style.transform='translate3d(0,'+(((r.top+r.height/2-vh/2)/vh)*-18)+'px,0)'})}
-  addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(frame)}},{passive:true});
-  addEventListener('resize',function(){vh=innerHeight});frame();
-})();
-</script>
-<script>
-/* medição sem cookies (Vercel Web Analytics): só eventos de navegação, nunca dados de saúde */
-window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
-window.track=function(n,p){try{window.va('event',p?{name:n,data:p}:{name:n})}catch(e){}};
-(function(){
-  var MAP=[['wa.me','whatsapp_direto'],['#triagem','ir_triagem'],['como-funciona','abrir_como_funciona'],['#como','cta_saber_mais'],['instagram.com','instagram'],['privacidade','ver_privacidade'],['termos','ver_termos']];
-  document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('a');if(!a)return;
-    var h=a.getAttribute('href')||'';
-    for(var i=0;i<MAP.length;i++){if(h.indexOf(MAP[i][0])>-1){window.track(MAP[i][1],{pagina:location.pathname});break}}
-  },true);
-  var f=document.getElementById('form');
-  if(f){var ini=false;f.addEventListener('input',function(){if(!ini){ini=true;window.track('triagem_inicio')}});}
-  var secs=[['como','viu_como_funciona'],['triagem','viu_triagem']],vistos={};
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&!vistos[x.target.id]){vistos[x.target.id]=1;window.track(x.target.dataset.ev)}})},{threshold:.35});
-    secs.forEach(function(s){var el=document.getElementById(s[0]);if(el){el.dataset.ev=s[1];io.observe(el)}});}
-})();
-</script>
+
+<script src="js/como.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

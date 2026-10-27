@@ -10,3 +10,6 @@ Edite aqui e gere o site:
 - `decor.js` (ilustrações), imagens e `vercel.json` ficam na raiz e são editados direto.
 
 A pasta `fonte/` não vai para o ar (ver `.vercelignore`).
+
+Gerados pelo build (não edite à mão): `index.html`, `como-funciona.html`, `privacidade.html`, `termos.html`, `style.css`, `css/`, `js/`, `robots.txt`, `sitemap.xml`.
+Domínio: ao ativar `chefalinefonseca.com.br`, trocar `SITE` no topo de `build.py` e rodar o build.

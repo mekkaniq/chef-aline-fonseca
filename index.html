@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aline Fonseca · Personal chef em Brusque e região</title>
+<meta name="description" content="Aline Fonseca cozinha na sua casa, com o seu gosto e o seu ritmo. Poucas casas por vez. Personal chef em Brusque e região.">
+<meta name="theme-color" content="#2F4A3A">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Aline Fonseca · Personal chef">
+<meta property="og:description" content="Uma chef na sua cozinha. Poucas casas por vez, em Brusque e região.">
+<meta property="og:image" content="https://chef-aline-fonseca.vercel.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#2F4A3A;--verde-esc:#1F3328;--noite:#101c15;--creme:#EAD8B6;--osso:#F7F0E2;--areia:#EFE3CB;--tinta:#1b2a21;--suave:#56665b;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Jost",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);--ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;color:var(--tinta);background:var(--osso);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--creme);outline-offset:4px}
+.on-light :focus-visible{outline-color:var(--verde)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--creme);color:var(--tinta);padding:10px 16px;z-index:100}
+.skip:focus{left:8px}
+
+/* tipografia */
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.02;letter-spacing:-.01em}
+h1{font-size:clamp(3.2rem,9vw,8.4rem)}
+h2{font-size:clamp(2.3rem,5.6vw,4.8rem)}
+h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.15}
+em{font-style:italic}
+.label{font-family:var(--sans);font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase}
+.wrap{width:min(1280px,100% - var(--pad)*2);margin-inline:auto}
+section{position:relative}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:18px 34px;border:1px solid currentColor;text-decoration:none;font-weight:400;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;background:none;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+.btn .ar{display:inline-block;width:26px;height:1px;background:currentColor;position:relative;transition:width .4s var(--ease)}
+.btn .ar::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .ar{width:40px}
+.btn.cheio{background:var(--creme);color:var(--verde-esc);border-color:var(--creme)}
+.btn.cheio:hover{background:#fff;border-color:#fff}
+.btn.claro:hover{background:var(--creme);color:var(--verde-esc)}
+.btn.escuro{color:var(--verde)}
+.btn.escuro:hover{background:var(--verde);color:var(--osso)}
+.txt-link{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;opacity:.85;transition:opacity .3s}
+.txt-link:hover{opacity:1}
+
+/* progresso */
+.prog{position:fixed;left:0;top:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--creme);z-index:60;pointer-events:none}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:transform .5s var(--ease),background .5s,backdrop-filter .5s;color:var(--creme)}
+header.solid{background:rgba(31,51,40,.92);backdrop-filter:blur(10px)}
+header.hide{transform:translateY(-100%)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:76px}
+.marca{display:flex;align-items:center;gap:14px;text-decoration:none}
+.marca img{height:38px;width:auto}
+.marca span{font-family:var(--serif);font-size:1.25rem;letter-spacing:.14em;text-transform:uppercase}
+nav ul{display:flex;gap:40px;list-style:none}
+nav a{text-decoration:none;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;opacity:.85;transition:opacity .3s}
+nav a:hover{opacity:1}
+.hd .btn{padding:12px 22px;font-size:.7rem}
+@media(max-width:900px){nav{display:none}}
+@media(max-width:520px){.marca span{display:none}.hd .btn{padding:11px 16px}}
+
+/* hero */
+.hero{background:var(--verde);color:var(--creme);min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;right:0;top:0;bottom:0;width:min(58vw,820px);z-index:-1;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)}
+.hero-img img{width:100%;height:112%;object-fit:cover;object-position:50% 25%;will-change:transform}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(0deg,var(--verde),transparent);z-index:-1;pointer-events:none}
+.hero-in{padding:140px 0 clamp(48px,8vh,96px)}
+.hero .label{margin-bottom:28px;opacity:.9}
+.hero h1{max-width:9.5em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ln>span{display:block;transform:translateY(105%);animation:up 1.3s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.14s}
+.hero h1 em{font-weight:300}
+@keyframes up{to{transform:none}}
+.hero p.sub{max-width:30em;font-size:1.12rem;margin:34px 0 44px;opacity:0;animation:fade 1.2s .7s var(--ease) forwards}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:26px;align-items:center;opacity:0;animation:fade 1.2s .95s var(--ease) forwards}
+@keyframes fade{to{opacity:1}}
+.dica{position:absolute;right:var(--pad);bottom:44px;display:flex;flex-direction:column;align-items:center;gap:12px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.7}
+.dica::after{content:"";width:1px;height:56px;background:var(--creme);animation:lin 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes lin{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media(max-width:820px){
+  .hero-img{width:100%;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent 92%);mask-image:linear-gradient(180deg,#000 40%,transparent 92%);opacity:.8}
+  .hero-img img{object-position:50% 12%}
+  .hero{align-items:flex-end}
+  .hero-in{padding-top:46vh}
+  .dica{display:none}
+}
+
+/* manifesto */
+.mani{background:var(--osso);padding:clamp(110px,18vw,240px) 0}
+.mani p.big{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4.4vw,3.8rem);line-height:1.22;max-width:21em;color:var(--tinta)}
+.mani .w{opacity:.14;transition:opacity .25s linear}
+.mani .ass{margin-top:44px;display:flex;align-items:center;gap:18px;color:var(--verde)}
+.mani .ass::before{content:"";width:56px;height:1px;background:var(--verde)}
+
+/* sobre */
+.sobre{background:var(--areia);padding:clamp(80px,12vw,170px) 0}
+.sobre-g{display:grid;grid-template-columns:.85fr 1fr;gap:clamp(40px,8vw,130px);align-items:start}
+.sobre figure{position:sticky;top:96px}
+.moldura{overflow:hidden;position:relative}
+.moldura img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;will-change:transform}
+.sobre figcaption{margin-top:14px;color:var(--suave)}
+.sobre h2{color:var(--verde);margin:18px 0 38px}
+.sobre p{max-width:34em;font-size:1.08rem;margin-bottom:22px}
+.cred{list-style:none;margin-top:46px;border-top:1px solid rgba(47,74,58,.35)}
+.cred li{padding:17px 0;border-bottom:1px solid rgba(47,74,58,.35);display:flex;gap:20px;align-items:baseline;font-size:1.02rem}
+.cred li b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:1.2rem;color:var(--verde);min-width:2.2em}
+@media(max-width:820px){.sobre-g{grid-template-columns:1fr}.sobre figure{position:relative;top:0;max-width:420px}}
+
+/* galeria horizontal */
+.hz{background:var(--noite);color:var(--creme)}
+.hz-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hz-top{padding:0 var(--pad);margin-bottom:clamp(20px,4vh,48px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.hz-top h2{max-width:11em}
+.hz-top .label{opacity:.65;white-space:nowrap}
+.hz-track{display:flex;gap:clamp(16px,2.4vw,36px);padding:0 var(--pad);will-change:transform;width:max-content}
+.card{flex:none;width:clamp(230px,26vw,400px);position:relative}
+.card .moldura{aspect-ratio:3/4}
+.card:nth-child(even){margin-top:clamp(20px,6vh,70px)}
+.card:nth-child(odd){margin-bottom:clamp(20px,6vh,70px)}
+.card.larga{width:clamp(320px,44vw,660px)}
+.card.larga .moldura{aspect-ratio:3/2}
+.card .moldura img{height:100%;aspect-ratio:auto;object-position:center}
+.card figcaption{margin-top:14px;display:flex;justify-content:space-between;opacity:.8}
+.hz-fim{flex:none;width:clamp(240px,30vw,420px);display:flex;align-items:center}
+.hz-fim p{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.2;font-style:italic;font-weight:300}
+@media(max-width:700px){.hz-top{flex-direction:column;align-items:flex-start}}
+
+/* como funciona */
+.como{background:var(--osso);padding:clamp(90px,13vw,190px) 0}
+.como-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px)}
+.como h2{color:var(--verde);margin:18px 0 0;max-width:8em}
+.como .esq{position:sticky;top:110px;align-self:start}
+.como .esq .moldura{margin-top:44px;max-width:430px}
+.como .esq .moldura img{aspect-ratio:4/5}
+.passos{list-style:none;counter-reset:p;padding-top:6px}
+.passos li{counter-increment:p;padding:48px 0 52px 86px;border-top:1px solid rgba(47,74,58,.3);position:relative;opacity:.38;transition:opacity .6s var(--ease)}
+.passos li.on{opacity:1}
+.passos li::before{content:counter(p,decimal-leading-zero);position:absolute;left:0;top:44px;font-family:var(--serif);font-style:italic;font-size:2.6rem;line-height:1;color:var(--verde)}
+.passos h3{color:var(--tinta);margin-bottom:12px}
+.passos p{max-width:30em;color:var(--suave)}
+@media(max-width:820px){.como-g{grid-template-columns:1fr}.como .esq{position:relative;top:0}.passos li{opacity:1}}
+
+/* triagem */
+.tri{background:var(--verde);color:var(--creme);padding:clamp(90px,13vw,190px) 0}
+.tri-cab{max-width:46em;margin-bottom:clamp(40px,6vw,80px)}
+.tri h2{margin:18px 0 26px}
+.tri-cab p{font-size:1.1rem;opacity:.9;max-width:34em}
+.passo-t{margin-top:clamp(44px,6vw,76px)}
+.passo-t>.label{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.passo-t>.label::after{content:"";flex:1;height:1px;background:rgba(234,216,182,.3)}
+.passo-t>.label small{font-size:inherit;opacity:.6}
+.gostos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px)}
+.gosto{position:relative;cursor:pointer;display:block}
+.gosto input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;z-index:2}
+.gosto .moldura{aspect-ratio:4/3}
+.gosto .moldura img{height:100%;aspect-ratio:auto;transition:transform 1.2s var(--ease),filter .5s;filter:saturate(.85) brightness(.82)}
+.gosto:hover .moldura img{transform:scale(1.05)}
+.gosto .nome{position:absolute;left:18px;right:18px;bottom:14px;display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--serif);font-size:1.5rem;line-height:1.1;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.gosto .moldura::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,28,21,.7),transparent 55%);pointer-events:none}
+.gosto .ck{width:26px;height:26px;border:1px solid var(--creme);border-radius:50%;flex:none;position:relative;transition:background .3s}
+.gosto .ck::after{content:"";position:absolute;left:8px;top:4px;width:6px;height:11px;border:solid var(--verde-esc);border-width:0 1.5px 1.5px 0;transform:rotate(45deg) scale(0);transition:transform .3s var(--ease)}
+.gosto input:checked~.moldura img{filter:none}
+.gosto input:checked~.nome .ck{background:var(--creme)}
+.gosto input:checked~.nome .ck::after{transform:rotate(45deg) scale(1)}
+.gosto input:checked~.moldura{outline:2px solid var(--creme);outline-offset:-2px}
+.gosto input:focus-visible~.moldura{outline:2px dashed var(--creme);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer}
+.chip span{display:inline-block;padding:12px 22px;border:1px solid rgba(234,216,182,.5);font-size:.84rem;letter-spacing:.06em;transition:background .3s,color .3s,border-color .3s}
+.chip:hover span{border-color:var(--creme)}
+.chip input:checked+span{background:var(--creme);color:var(--verde-esc);border-color:var(--creme)}
+.chip input:focus-visible+span{outline:2px dashed var(--creme);outline-offset:3px}
+.aviso{max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .6s,margin .6s;font-size:.98rem;max-width:44em;border-left:1px solid var(--creme);padding-left:18px}
+.aviso.on{max-height:200px;opacity:.95;margin-top:22px}
+.campos{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(22px,3vw,40px) clamp(24px,4vw,64px)}
+.campo{display:flex;flex-direction:column;gap:8px}
+.campo.full{grid-column:1/-1}
+.campo label{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;opacity:.75;font-weight:400}
+.campo input,.campo select,.campo textarea{background:none;border:0;border-bottom:1px solid rgba(234,216,182,.5);padding:10px 0 12px;font-family:var(--serif);font-size:1.5rem;line-height:1.3;color:var(--creme);border-radius:0;outline:0;transition:border-color .3s}
+.campo select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--creme) 50%),linear-gradient(135deg,var(--creme) 50%,transparent 50%);background-position:calc(100% - 14px) 52%,calc(100% - 8px) 52%;background-size:6px 6px;background-repeat:no-repeat;cursor:pointer}
+.campo select option{color:var(--tinta);font-family:var(--sans);font-size:1rem}
+.campo textarea{resize:vertical;min-height:54px}
+.campo input::placeholder,.campo textarea::placeholder{color:rgba(234,216,182,.4)}
+.campo input:focus,.campo select:focus,.campo textarea:focus{border-color:#fff}
+.erro{color:#e6f0d8;font-size:.92rem;min-height:1.4em;margin-top:6px}
+.envia{margin-top:clamp(36px,5vw,60px);display:flex;flex-wrap:wrap;align-items:center;gap:28px}
+.nota{font-size:.94rem;opacity:.8;max-width:30em}
+@media(max-width:820px){.gostos{grid-template-columns:repeat(2,1fr)}.campos{grid-template-columns:1fr}.gosto .nome{font-size:1.2rem;left:12px;right:12px}}
+@media(max-width:420px){.gostos{grid-template-columns:1fr}}
+
+/* faq */
+.faq{background:var(--osso);padding:clamp(90px,13vw,190px) 0}
+.faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,8vw,130px)}
+.faq h2{color:var(--verde);margin-top:18px}
+details{border-top:1px solid rgba(47,74,58,.3)}
+details:last-of-type{border-bottom:1px solid rgba(47,74,58,.3)}
+summary{list-style:none;cursor:pointer;padding:28px 56px 28px 0;font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.85rem);line-height:1.2;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::before,summary::after{content:"";position:absolute;right:8px;top:50%;width:18px;height:1px;background:var(--verde);transition:transform .4s var(--ease)}
+summary::after{transform:rotate(90deg)}
+details[open] summary::after{transform:rotate(0)}
+.resp{overflow:hidden}
+details p{padding:0 56px 30px 0;max-width:36em;color:var(--suave);font-size:1.04rem}
+@media(max-width:820px){.faq-g{grid-template-columns:1fr}}
+
+/* final */
+.fim{background:var(--noite);color:var(--creme);overflow:hidden}
+.fim-g{display:grid;grid-template-columns:1.1fr .9fr;min-height:92svh;align-items:stretch}
+.fim-t{padding:clamp(90px,12vw,170px) var(--pad);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:34px}
+.fim h2{max-width:9em}
+.fim p.l{max-width:28em;font-size:1.1rem;opacity:.88}
+.fim-f{position:relative;overflow:hidden;min-height:420px}
+.fim-f img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;object-position:50% 25%;will-change:transform}
+.fim-f::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--noite),transparent 30%)}
+@media(max-width:820px){.fim-g{grid-template-columns:1fr}.fim-f{order:-1;min-height:60vh}.fim-f::after{background:linear-gradient(0deg,var(--noite),transparent 40%)}}
+footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px solid rgba(234,216,182,.18)}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;align-items:start}
+.ft img{height:84px;width:auto}
+.ft h4{font-weight:400;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;opacity:.6;margin-bottom:14px}
+.ft ul{list-style:none;display:grid;gap:8px;font-size:.98rem}
+.ft a{text-decoration:none;opacity:.9}.ft a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.cr{margin-top:44px;font-size:.78rem;opacity:.5}
+@media(max-width:720px){.ft{grid-template-columns:1fr}}
+
+/* botão fixo celular */
+.fab{display:none}
+@media(max-width:640px){
+  .fab{display:flex;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:55;justify-content:center;background:var(--creme);color:var(--verde-esc);border-color:var(--creme);box-shadow:0 10px 30px rgba(0,0,0,.35);transform:translateY(160%);transition:transform .6s var(--ease)}
+  .fab.on{transform:none}
+  body{padding-bottom:0}
+}
+
+/* reveals */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.cv{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s var(--ease)}
+.cv.in{clip-path:inset(0 0 0 0)}
+.moldura img{transform:scale(1.14);transition:transform 2s var(--ease)}
+.cv.in img,.moldura.in img{transform:scale(1)}
+.noanim .rv,.noanim .cv{opacity:1;transform:none;clip-path:none;transition:none}
+.noanim .moldura img{transform:none;transition:none}
+.noanim .mani .w{opacity:1}
+.noanim .passos li{opacity:1}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.cv{opacity:1;transform:none;clip-path:none;transition:none}
+  .moldura img{transform:none!important;transition:none}
+  .hero h1 .ln>span{animation:none;transform:none}
+  .hero p.sub,.hero .acoes{animation:none;opacity:1}
+  .dica::after{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<header id="hd">
+  <div class="wrap hd">
+    <a class="marca" href="#topo" aria-label="Aline Fonseca, início"><img src="img/monograma-creme.png" alt="" width="42" height="38"><span>Aline Fonseca</span></a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#sobre">A chef</a></li>
+      <li><a href="#cozinha">A cozinha</a></li>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#perguntas">Perguntas</a></li>
+    </ul></nav>
+    <a class="btn claro" href="#triagem">Pedir um lugar</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero" id="topo" aria-labelledby="t-hero">
+  <div class="hero-img" data-par="hero"><img src="img/hero.webp" alt="Retrato em preto e branco de Aline Fonseca apoiada na bancada de uma cozinha, olhando para a janela" width="1200" height="1800" fetchpriority="high"></div>
+  <div class="wrap hero-in">
+    <p class="label">Personal chef · Brusque e região</p>
+    <h1 id="t-hero"><span class="ln"><span>Uma chef</span></span><span class="ln"><span>na <em>sua</em> cozinha.</span></span></h1>
+    <p class="sub">Aline Fonseca cozinha na sua casa, com o seu gosto e o seu ritmo. Poucas casas por vez, para cuidar bem de cada uma.</p>
+    <div class="acoes">
+      <a class="btn cheio" href="#triagem">Pedir um lugar na agenda <span class="ar" aria-hidden="true"></span></a>
+      <a class="txt-link" href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Falar direto no WhatsApp</a>
+    </div>
+  </div>
+  <div class="dica" aria-hidden="true">Role</div>
+</section>
+
+<section class="mani on-light" aria-label="Manifesto">
+  <div class="wrap">
+    <p class="big" id="mani">Eu cozinho porque gosto de ver gente à mesa. Comida guarda memória: o cheiro que lembra a casa da avó, o prato que reúne a família no domingo. Na sua casa, quero fazer disso rotina.</p>
+    <p class="ass label rv">Aline Fonseca</p>
+  </div>
+</section>
+
+<section class="sobre on-light" id="sobre" aria-labelledby="t-sobre">
+  <div class="wrap sobre-g">
+    <figure>
+      <div class="moldura cv"><img src="img/aline-pote.webp" alt="Aline Fonseca sorrindo enquanto cozinha numa panela de ferro, de avental preto e touca" width="720" height="1280" loading="lazy" data-par="foto"></div>
+      <figcaption class="label rv">Aline, em ação</figcaption>
+    </figure>
+    <div>
+      <p class="label rv">A chef</p>
+      <h2 id="t-sobre" class="rv">Aline <em>Fonseca</em></h2>
+      <p class="rv">Nasci em Vilhena, no interior de Rondônia, numa casa de cultura sulista. Cresci entre cuca doce, polenta e churrasco, e esses sabores nunca saíram de mim. Em Brusque, eles fazem parte da mesa de todo mundo.</p>
+      <p class="rv">Estudei Gastronomia em Porto Velho e passei os últimos anos cozinhando para eventos. Tenho buffet próprio e já servi quinhentas pessoas de uma vez. Mas o que mais gosto é do que acontece numa cozinha de casa: conhecer quem vai comer e cozinhar do jeito que a pessoa gosta.</p>
+      <ul class="cred rv">
+        <li><b>01</b> Técnica em Gastronomia, FIMCA, Porto Velho</li>
+        <li><b>02</b> Curso de Cozinheiro, SENAC</li>
+        <li><b>03</b> Buffet próprio e eventos de até 500 pessoas</li>
+        <li><b>04</b> Chef em campanha da Le Creuset</li>
+        <li><b>05</b> Já cozinhou para um presidente da República</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="hz" id="cozinha" aria-label="Pratos da Aline">
+  <div class="hz-pin">
+    <div class="hz-top">
+      <h2>O que sai da <em>cozinha</em> dela</h2>
+      <p class="label">Arraste a rolagem →</p>
+    </div>
+    <div class="hz-track" id="track">
+      <figure class="card"><div class="moldura"><img src="img/sobremesa.webp" alt="Sobremesa com queijo brie, calda de caramelo, frutas secas e frutas vermelhas, servida em prato de cristal" width="900" height="1200" loading="lazy"></div><figcaption class="label"><span>Sobremesas</span><span>01</span></figcaption></figure>
+      <figure class="card larga"><div class="moldura"><img src="img/mesa.webp" alt="Mesa de buffet montada em varanda com folhagens e frutas" width="900" height="600" loading="lazy"></div><figcaption class="label"><span>Mesas de evento</span><span>02</span></figcaption></figure>
+      <figure class="card"><div class="moldura"><img src="img/autoral.webp" alt="Prato autoral visto de cima: desfiado com tomates, farofa e creme amarelo em prato cinza" width="900" height="1044" loading="lazy"></div><figcaption class="label"><span>Pratos autorais</span><span>03</span></figcaption></figure>
+      <figure class="card"><div class="moldura"><img src="img/panela.webp" alt="Prato de panela em cocotte vermelha, com queijo ralado e uma flor azul comestível" width="900" height="1200" loading="lazy"></div><figcaption class="label"><span>Pratos de panela</span><span>04</span></figcaption></figure>
+      <figure class="card"><div class="moldura"><img src="img/petisco.webp" alt="Bolinhas douradas de salgado em espetos de bambu, com cobertura cremosa" width="900" height="900" loading="lazy"></div><figcaption class="label"><span>Salgados</span><span>05</span></figcaption></figure>
+      <figure class="card"><div class="moldura"><img src="img/tabua.webp" alt="Tábua de frios com salames, queijos, azeitonas e castanhas" width="768" height="1024" loading="lazy"></div><figcaption class="label"><span>Tábuas e frios</span><span>06</span></figcaption></figure>
+      <figure class="card larga"><div class="moldura"><img src="img/mar.webp" alt="Panela grande com frutos do mar refogados" width="600" height="330" loading="lazy"></div><figcaption class="label"><span>Frutos do mar</span><span>07</span></figcaption></figure>
+      <div class="hz-fim"><p>Cada casa recebe o que combina com ela.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="como on-light" id="como" aria-labelledby="t-como">
+  <div class="wrap como-g">
+    <div class="esq">
+      <p class="label">Como funciona</p>
+      <h2 id="t-como">Do primeiro contato ao <em>jantar</em></h2>
+      <div class="moldura cv"><img src="img/casa.webp" alt="Aline de touca e máscara arrumando uma mesa de jantar numa casa, com pratos e guardanapos" width="900" height="1200" loading="lazy" data-par="foto"></div>
+    </div>
+    <ol class="passos" id="passos">
+      <li><h3>Você conta o que gosta</h3><p>Responde a um roteiro curto sobre gostos, restrições e rotina. Leva uns três minutos.</p></li>
+      <li><h3>A Aline responde</h3><p>Ela lê tudo, diz se consegue atender e continua a conversa pelo WhatsApp.</p></li>
+      <li><h3>Combinam o resto</h3><p>Frequência, número de pessoas, ingredientes e logística. Tudo conversado antes de começar.</p></li>
+      <li><h3>Ela cozinha na sua casa</h3><p>A Aline vai até você, cozinha na sua cozinha e organiza as refeições conforme o combinado.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tri" id="triagem" aria-labelledby="t-tri">
+  <div class="wrap">
+    <div class="tri-cab">
+      <p class="label rv">Pedir um lugar na agenda</p>
+      <h2 id="t-tri" class="rv">Conte o que você gosta de <em>comer</em></h2>
+      <p class="rv">Marque o que combina com você. A Aline lê antes de responder e já sabe por onde começar.</p>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="passo-t">
+        <p class="label">01 <small>· o que você gosta</small></p>
+        <div class="gostos">
+          <label class="gosto"><input type="checkbox" name="gosto" value="Sobremesas"><div class="moldura in"><img src="img/sobremesa.webp" alt="" width="900" height="1200" loading="lazy"></div><span class="nome">Sobremesas<i class="ck"></i></span></label>
+          <label class="gosto"><input type="checkbox" name="gosto" value="Pratos autorais"><div class="moldura in"><img src="img/autoral.webp" alt="" width="900" height="1044" loading="lazy"></div><span class="nome">Pratos autorais<i class="ck"></i></span></label>
+          <label class="gosto"><input type="checkbox" name="gosto" value="Pratos de panela"><div class="moldura in"><img src="img/panela.webp" alt="" width="900" height="1200" loading="lazy"></div><span class="nome">Pratos de panela<i class="ck"></i></span></label>
+          <label class="gosto"><input type="checkbox" name="gosto" value="Salgados e petiscos"><div class="moldura in"><img src="img/petisco.webp" alt="" width="900" height="900" loading="lazy"></div><span class="nome">Salgados e petiscos<i class="ck"></i></span></label>
+          <label class="gosto"><input type="checkbox" name="gosto" value="Tábuas e frios"><div class="moldura in"><img src="img/tabua.webp" alt="" width="768" height="1024" loading="lazy"></div><span class="nome">Tábuas e frios<i class="ck"></i></span></label>
+          <label class="gosto"><input type="checkbox" name="gosto" value="Frutos do mar"><div class="moldura in"><img src="img/mar.webp" alt="" width="600" height="330" loading="lazy"></div><span class="nome">Frutos do mar<i class="ck"></i></span></label>
+        </div>
+        <div class="chips" style="margin-top:18px">
+          <label class="chip"><input type="checkbox" name="gosto" value="Sabores do Sul (cuca, polenta, churrasco)"><span>Sabores do Sul: cuca, polenta, churrasco</span></label>
+          <label class="chip"><input type="checkbox" name="gosto" value="Comida do dia a dia"><span>Comida do dia a dia</span></label>
+          <label class="chip"><input type="checkbox" name="gosto" value="Ainda não sei, quero sugestões"><span>Ainda não sei</span></label>
+        </div>
+      </div>
+
+      <div class="passo-t">
+        <p class="label">02 <small>· restrições e cuidados</small></p>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="rest" value="Sem glúten"><span>Sem glúten</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Sem lactose"><span>Sem lactose</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Vegetariano"><span>Vegetariano</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Orientação de nutricionista ou médico"><span>Tenho orientação de nutricionista ou médico</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Alergia alimentar" id="alergia"><span>Alergia alimentar</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Nenhuma"><span>Nenhuma</span></label>
+        </div>
+        <p class="aviso" id="aviso" role="status">Obrigada por contar. Alergias e restrições sérias a Aline avalia caso a caso, antes de aceitar, porque numa cozinha de casa utensílios e superfícies também precisam de cuidado. Se não for possível atender com segurança, ela diz.</p>
+        <div class="campos" style="margin-top:34px">
+          <div class="campo full"><label for="nao">O que você não come?</label><input id="nao" name="nao" type="text" placeholder="Ex.: coentro, fígado, pimenta" autocomplete="off"></div>
+        </div>
+      </div>
+
+      <div class="passo-t">
+        <p class="label">03 <small>· sobre a sua casa</small></p>
+        <div class="campos">
+          <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" required autocomplete="name"></div>
+          <div class="campo"><label for="local">Bairro e cidade</label><input id="local" name="local" type="text" required placeholder="Ex.: Centro, Brusque" autocomplete="off"></div>
+          <div class="campo"><label for="pessoas">Pessoas na casa</label>
+            <select id="pessoas" name="pessoas"><option>1 ou 2</option><option>3 ou 4</option><option>5 ou mais</option></select></div>
+          <div class="campo"><label for="freq">Frequência</label>
+            <select id="freq" name="freq"><option>Toda semana</option><option>A cada 15 dias</option><option>Algumas vezes por mês</option><option>Ainda não sei</option></select></div>
+          <div class="campo full"><label for="obs">Quer contar mais alguma coisa?</label><textarea id="obs" name="obs" rows="2" placeholder="Rotina, o que sente falta de comer em casa, uma ocasião especial"></textarea></div>
+        </div>
+        <p class="erro" id="erro" role="alert"></p>
+      </div>
+
+      <div class="envia">
+        <button class="btn cheio" type="submit">Enviar para a Aline <span class="ar" aria-hidden="true"></span></button>
+        <p class="nota">Abre o WhatsApp com a sua mensagem pronta. O valor é combinado na conversa, pensado para a sua casa.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="faq on-light" id="perguntas" aria-labelledby="t-faq">
+  <div class="wrap faq-g">
+    <div><p class="label">Perguntas</p><h2 id="t-faq">O que costumam <em>perguntar</em></h2></div>
+    <div>
+      <details><summary>A Aline cozinha na minha casa?</summary><div class="resp"><p>Sim. Ela leva a técnica e o jeito dela para a sua cozinha e cozinha ali, com o que combinarem.</p></div></details>
+      <details><summary>Preciso seguir alguma dieta?</summary><div class="resp"><p>Não. Quem quer comer melhor, sem precisar pensar em tudo, também é bem-vindo. Se você tem orientação de nutricionista ou médico, ela cozinha a partir dela. A Aline não prescreve dietas.</p></div></details>
+      <details><summary>E se eu tiver alergia ou intolerância?</summary><div class="resp"><p>Conte na hora de pedir o seu lugar. Cada caso é avaliado antes de qualquer combinação. Em casa, utensílios e superfícies precisam de atenção, e nem toda alergia grave dá para atender com segurança. Se não der, ela diz.</p></div></details>
+      <details><summary>Quem compra os ingredientes?</summary><div class="resp"><p>Isso é combinado antes. Pode ser você, ou a própria Aline, com prestação de contas e taxa de serviço informada previamente.</p></div></details>
+      <details><summary>Quanto custa?</summary><div class="resp"><p>Depende do número de pessoas, da frequência e do que for combinado. Por isso o valor é definido na conversa, com clareza antes de começar.</p></div></details>
+      <details><summary>Com que frequência ela vai?</summary><div class="resp"><p>Toda semana, a cada quinze dias ou como combinarem. A agenda é pequena de propósito, para que cada casa tenha atenção de verdade.</p></div></details>
+      <details><summary>Quais cidades vocês atendem?</summary><div class="resp"><p>Brusque e região. Mora em outra cidade? Escreva, que ela avalia.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="fim" id="contato" aria-labelledby="t-fim">
+  <div class="fim-g">
+    <div class="fim-t">
+      <p class="label rv">Poucas casas por vez</p>
+      <h2 id="t-fim" class="rv">Quer um lugar na <em>agenda</em>?</h2>
+      <p class="l rv">Conte o que você procura. A Aline responde pessoalmente e diz se há espaço.</p>
+      <div class="rv" style="display:flex;flex-wrap:wrap;gap:26px;align-items:center">
+        <a class="btn cheio" href="#triagem">Pedir um lugar <span class="ar" aria-hidden="true"></span></a>
+        <a class="txt-link" href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Ou chame no WhatsApp</a>
+      </div>
+    </div>
+    <div class="fim-f"><img src="img/aline-tabua.webp" alt="Aline Fonseca segurando uma tábua de madeira na cozinha, olhando para o lado e sorrindo" width="900" height="1200" loading="lazy" data-par="foto"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><img src="img/logo-creme.png" alt="Aline Fonseca, Personal Chef" width="138" height="84"></div>
+      <div><h4>Contato</h4><ul><li><a href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (69) 99600-0030</a></li><li><a href="https://instagram.com/chefalinefonseca01_" target="_blank" rel="noopener">@chefalinefonseca01_</a></li></ul></div>
+      <div><h4>Atendimento</h4><ul><li>Brusque e região, SC</li><li>Na sua casa</li></ul></div>
+    </div>
+    <p class="cr">© Aline Fonseca · Personal Chef. A chef cozinha a partir das orientações que você já tem e não substitui nutricionista ou médico.</p>
+  </div>
+</footer>
+
+<a class="btn fab" id="fab" href="#triagem">Pedir um lugar na agenda</a>
+
+<script>
+(function(){
+  var WA="5569996000030";
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)document.documentElement.classList.add('noanim');
+  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  var vh=window.innerHeight;
+
+  /* revela ao entrar */
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){(e.target._t||e.target).classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -6% 0px'}):null;
+  $$('.rv,.cv').forEach(function(el){if(!io){el.classList.add('in');return}
+    if(el.classList.contains('cv')){var h=el.parentElement;h._t=el;io.observe(h)}else io.observe(el)});
+
+  /* manifesto palavra a palavra */
+  var m=$('#mani'),words=[];
+  if(m){var t=m.textContent.trim().split(/\s+/);m.innerHTML=t.map(function(w){return '<span class="w">'+w+'</span>'}).join(' ');words=$$('.w',m)}
+
+  /* galeria horizontal */
+  var hz=$('.hz'),track=$('#track'),hzMax=0;
+  function sizeHz(){if(!hz||!track)return;hzMax=Math.max(0,track.scrollWidth-window.innerWidth);hz.style.height=(hzMax+window.innerHeight)+'px'}
+
+  /* passos */
+  var passos=$$('#passos li');
+  var pio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('on',e.isIntersecting)})},{rootMargin:'-38% 0px -38% 0px'}):null;
+  passos.forEach(function(li){pio?pio.observe(li):li.classList.add('on')});
+
+  var hd=$('#hd'),prog=$('#prog'),fab=$('#fab'),lastY=0,ticking=false;
+  var pars=$$('[data-par]');
+
+  function frame(){
+    ticking=false;
+    var y=window.scrollY,H=document.documentElement.scrollHeight-vh;
+    prog.style.transform='scaleX('+(H>0?y/H:0)+')';
+    hd.classList.toggle('solid',y>40);
+    hd.classList.toggle('hide',y>vh*.6&&y>lastY+4);
+    if(y<lastY-4)hd.classList.remove('hide');
+    lastY=y;
+    if(fab)fab.classList.toggle('on',y>vh*.7&&!isInView('#triagem'));
+    if(reduce)return;
+    pars.forEach(function(el){
+      var r=el.getBoundingClientRect();if(r.bottom<-100||r.top>vh+100)return;
+      var p=(r.top+r.height/2-vh/2)/vh;
+      var k=el.dataset.par==='hero'?-8:-6;
+      if(el.dataset.par==='hero'){el.firstElementChild.style.transform='translate3d(0,'+(y*.18)+'px,0)'}
+      else{el.style.transform='translate3d(0,'+(p*k*3)+'px,0)'}
+    });
+    var mr=m&&m.getBoundingClientRect();
+    if(mr){var pr=Math.min(1,Math.max(0,(vh*.82-mr.top)/(mr.height+vh*.1)));var n=words.length,cut=pr*n*1.15;words.forEach(function(w,i){w.style.opacity=Math.min(1,.14+Math.max(0,(cut-i))/3*.86)})}
+    if(hz&&track){var hr=hz.getBoundingClientRect();var pp=Math.min(1,Math.max(0,-hr.top/(hr.height-vh)));track.style.transform='translate3d('+(-pp*hzMax)+'px,0,0)'}
+  }
+  function isInView(sel){var e=$(sel);if(!e)return false;var r=e.getBoundingClientRect();return r.top<vh*.8&&r.bottom>vh*.2}
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',function(){vh=window.innerHeight;sizeHz();req()});
+  window.addEventListener('load',function(){sizeHz();frame()});
+  sizeHz();frame();
+
+  /* triagem */
+  var form=$('#form'),erro=$('#erro'),aviso=$('#aviso');
+  var alergia=$('#alergia');
+  if(alergia)alergia.addEventListener('change',function(){aviso.classList.toggle('on',alergia.checked)});
+  var nenhuma=$('input[name=rest][value=Nenhuma]');
+  $$('input[name=rest]').forEach(function(c){c.addEventListener('change',function(){
+    if(c===nenhuma&&c.checked){$$('input[name=rest]').forEach(function(o){if(o!==c)o.checked=false});aviso.classList.remove('on')}
+    else if(c.checked&&nenhuma)nenhuma.checked=false})});
+  function vals(n){return $$('input[name='+n+']:checked',form).map(function(i){return i.value})}
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var nome=form.nome.value.trim(),local=form.local.value.trim();
+    if(!nome||!local){erro.textContent='Precisamos do seu nome e do seu bairro e cidade para a Aline saber por onde começar.';(!nome?form.nome:form.local).focus();return}
+    erro.textContent='';
+    var g=vals('gosto'),r=vals('rest');
+    var msg='Olá, Aline! Vim pelo seu site e gostaria de um lugar na sua agenda.\n\n'+
+      'Nome: '+nome+'\n'+
+      'Bairro e cidade: '+local+'\n'+
+      'Pessoas na casa: '+form.pessoas.value+'\n'+
+      'Frequência: '+form.freq.value+'\n'+
+      'O que eu gosto: '+(g.length?g.join(', '):'ainda não marquei')+'\n'+
+      'Restrições: '+(r.length?r.join(', '):'não informei')+'\n'+
+      (form.nao.value.trim()?'Não como: '+form.nao.value.trim()+'\n':'')+
+      (form.obs.value.trim()?'Mais um detalhe: '+form.obs.value.trim()+'\n':'')+
+      '\nPodemos conversar?';
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>

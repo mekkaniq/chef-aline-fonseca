@@ -110,6 +110,7 @@ footer{position:relative}
 @media(max-width:820px){.dec{left:var(--mx,var(--x));top:var(--my,var(--y));width:var(--mw,calc(var(--w)*.62))}.dec.hm{display:none}}
 @media(prefers-reduced-motion:reduce){.dec{animation:none}.dec svg *{stroke-dashoffset:0;transition:none}}
 .aceite+.aceite{margin-top:18px}
+.aceite.opc{opacity:.78}
 /* para quem */
 .paraq{background:var(--verde-esc);color:var(--creme);padding:clamp(90px,13vw,190px) 0}
 .paraq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,8vw,130px);align-items:start}

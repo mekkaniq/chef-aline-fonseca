@@ -248,7 +248,8 @@
       </div>
 
       <label class="aceite"><input type="checkbox" id="lgpd"><span>Li a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e concordo que a Aline use o que eu informar, inclusive dados sobre saúde e alimentação (restrições, alergias, plano de nutricionista), apenas para avaliar e combinar o atendimento. Posso retirar esse consentimento quando quiser.</span></label>
-<label class="aceite"><input type="checkbox" id="ciente"><span>Li <a href="como-funciona.html" target="_blank" rel="noopener">como funciona</a> e entendi que a Aline cozinha na minha cozinha: ela precisa dela disponível durante todo o atendimento, com liberdade para pegar o que precisar, e os ingredientes combinados já estarão em casa, descongelados quando for o caso.</span></label>
+<label class="aceite"><input type="checkbox" id="ciente"><span>Li <a href="como-funciona.html" target="_blank" rel="noopener">como funciona</a> e entendi que ela vai à minha casa e cozinha na minha cozinha: precisa dela disponível durante todo o atendimento, com liberdade para abrir geladeira, freezer e armários e usar panelas e utensílios, e os ingredientes combinados já estarão em casa, descongelados quando for o caso. Entendi também que o combinado é formalizado em um contrato simples, que trata de acidentes e danos.</span></label>
+<label class="aceite opc"><input type="checkbox" id="img"><span><b>Opcional.</b> Autorizo fotos e vídeos apenas dos pratos, do preparo e das panelas, para divulgação (Instagram e site), sem mostrar minha casa, moradores ou qualquer dado meu. Não afeta o atendimento e posso retirar quando quiser.</span></label>
       <p class="erro" id="erro2" role="alert"></p>
 
       <div class="envia">
@@ -447,7 +448,8 @@
       'Restrição: '+NIV[n]+'\n'+(n!=='nenhuma'?'Alimentos: '+(al.length?al.join(', '):'conto abaixo')+'\n':'')+(sev?'Contaminação cruzada: '+form.cross.value+'\n':'')+
       (form.nao.value.trim()?'Outro alimento a evitar: '+form.nao.value.trim()+'\n':'')+
       (form.obs.value.trim()?'Mais um detalhe: '+form.obs.value.trim()+'\n':'')+
-      'Li como funciona: sim, ciente dos combinados (cozinha disponível, ingredientes em casa, descongelamento).\n\nPodemos conversar?';
+      'Li como funciona: sim, ciente dos combinados (acesso à cozinha, ingredientes em casa, descongelamento, contrato).\n'+
+      'Fotos/vídeos dos pratos para divulgação: '+($('#img').checked?'autorizo (só pratos, preparo e panelas, sem mostrar a casa)':'não autorizo')+'\n\nPodemos conversar?';
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
   });
 })();

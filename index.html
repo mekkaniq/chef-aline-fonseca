@@ -134,6 +134,12 @@ nav a:hover{opacity:1}
 .sobre p{max-width:34em;font-size:1.08rem;margin-bottom:22px}
 .cred{list-style:none;margin-top:46px;border-top:1px solid rgba(47,74,58,.35)}
 .cred li{padding:17px 0;border-bottom:1px solid rgba(47,74,58,.35);display:flex;gap:20px;align-items:baseline;font-size:1.02rem}
+.traj{margin-top:54px}
+.traj .label{color:var(--verde);margin-bottom:16px}
+.traj-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.traj-g .moldura{aspect-ratio:4/3}
+.traj-g .moldura img{height:100%;aspect-ratio:auto}
+.traj-n{margin-top:14px;font-size:.92rem;color:var(--suave);max-width:30em}
 .cred li b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:1.2rem;color:var(--verde);min-width:2.2em}
 @media(max-width:820px){.sobre-g{grid-template-columns:1fr}.sobre figure{position:relative;top:0;max-width:420px}}
 
@@ -365,6 +371,14 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
         <li><b>04</b> Chef em campanha da Le Creuset</li>
         <li><b>05</b> Já cozinhou para um presidente da República</li>
       </ul>
+      <div class="traj rv">
+        <p class="label">Antes das casas, anos de eventos</p>
+        <div class="traj-g">
+          <figure><div class="moldura in"><img src="img/mesa.webp" alt="Mesa de buffet montada em varanda com folhagens e frutas" width="900" height="600" loading="lazy"></div></figure>
+          <figure><div class="moldura in"><img src="img/evento.webp" alt="Aline sorrindo de touca e dólmã verde durante um jantar de evento, com rosas brancas ao fundo" width="853" height="615" loading="lazy" style="object-position:50% 20%"></div></figure>
+        </div>
+        <p class="traj-n">Buffet próprio e eventos de até 500 pessoas. Hoje o foco é outro: a cozinha da sua casa.</p>
+      </div>
     </div>
   </div>
 </section>

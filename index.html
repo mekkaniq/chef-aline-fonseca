@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Aline Fonseca · Personal chef em Brusque e região</title>
-<meta name="description" content="Aline Fonseca cozinha na sua casa, com o seu gosto e o seu ritmo. Poucas casas por vez. Personal chef em Brusque e região.">
+<meta name="description" content="Personal chef em Brusque e região para quem tem restrição alimentar, segue plano de nutricionista ou precisa de uma alimentação diferente. Poucas casas por vez.">
 <meta name="theme-color" content="#2F4A3A">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Aline Fonseca · Personal chef">
-<meta property="og:description" content="Uma chef na sua cozinha. Poucas casas por vez, em Brusque e região.">
+<meta property="og:description" content="Comer bem, na sua cozinha, com cuidado. Poucas casas por vez, em Brusque e região.">
 <meta property="og:image" content="https://chef-aline-fonseca.vercel.app/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +108,20 @@ nav a:hover{opacity:1}
 .mani .w{opacity:.14;transition:opacity .25s linear}
 .mani .ass{margin-top:44px;display:flex;align-items:center;gap:18px;color:var(--verde)}
 .mani .ass::before{content:"";width:56px;height:1px;background:var(--verde)}
+
+/* para quem */
+.paraq{background:var(--verde-esc);color:var(--creme);padding:clamp(90px,13vw,190px) 0}
+.paraq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,8vw,130px);align-items:start}
+.paraq .esq{position:sticky;top:110px}
+.paraq h2{margin:18px 0 28px}
+.paraq .t{font-size:1.12rem;max-width:22em;opacity:.9}
+.paraq .lei{margin-top:34px;max-width:24em;font-size:.95rem;opacity:.75;border-left:1px solid var(--creme);padding-left:18px}
+.paraq ul{list-style:none;border-bottom:1px solid rgba(234,216,182,.25)}
+.paraq li{border-top:1px solid rgba(234,216,182,.25);padding:34px 0 36px;display:grid;grid-template-columns:3.4rem 1fr;gap:16px}
+.paraq li b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.5rem;line-height:1.1;opacity:.7}
+.paraq li h3{margin-bottom:10px}
+.paraq li p{max-width:32em;opacity:.8}
+@media(max-width:820px){.paraq-g{grid-template-columns:1fr}.paraq .esq{position:relative;top:0}}
 
 /* sobre */
 .sobre{background:var(--areia);padding:clamp(80px,12vw,170px) 0}
@@ -277,6 +291,7 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
   <div class="wrap hd">
     <a class="marca" href="#topo" aria-label="Aline Fonseca, início"><img src="img/monograma-creme.png" alt="" width="42" height="38"><span>Aline Fonseca</span></a>
     <nav aria-label="Principal"><ul>
+      <li><a href="#para-quem">Para quem</a></li>
       <li><a href="#sobre">A chef</a></li>
       <li><a href="#cozinha">A cozinha</a></li>
       <li><a href="#como">Como funciona</a></li>
@@ -292,8 +307,8 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
   <div class="hero-img" data-par="hero"><img src="img/hero.webp" alt="Retrato em preto e branco de Aline Fonseca apoiada na bancada de uma cozinha, olhando para a janela" width="1200" height="1800" fetchpriority="high"></div>
   <div class="wrap hero-in">
     <p class="label">Personal chef · Brusque e região</p>
-    <h1 id="t-hero"><span class="ln"><span>Uma chef</span></span><span class="ln"><span>na <em>sua</em> cozinha.</span></span></h1>
-    <p class="sub">Aline Fonseca cozinha na sua casa, com o seu gosto e o seu ritmo. Poucas casas por vez, para cuidar bem de cada uma.</p>
+    <h1 id="t-hero"><span class="ln"><span>Comer bem,</span></span><span class="ln"><span>na <em>sua</em> cozinha.</span></span></h1>
+    <p class="sub">Aline Fonseca cozinha na sua casa para quem tem restrição alimentar, segue um plano de nutricionista ou precisa de uma alimentação diferente. Poucas casas por vez.</p>
     <div class="acoes">
       <a class="btn cheio" href="#triagem">Pedir um lugar na agenda <span class="ar" aria-hidden="true"></span></a>
       <a class="txt-link" href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Falar direto no WhatsApp</a>
@@ -304,8 +319,27 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
 
 <section class="mani on-light" aria-label="Manifesto">
   <div class="wrap">
-    <p class="big" id="mani">Eu cozinho porque gosto de ver gente à mesa. Comida guarda memória: o cheiro que lembra a casa da avó, o prato que reúne a família no domingo. Na sua casa, quero fazer disso rotina.</p>
+    <p class="big" id="mani">Tem gente que nunca se sentou à mesa com tranquilidade. Por causa de uma alergia, de um plano alimentar, de uma fase da vida. Eu cozinho para essas pessoas, sem fazer disso um peso e sem tirar o prazer de comer.</p>
     <p class="ass label rv">Aline Fonseca</p>
+  </div>
+</section>
+
+<section class="paraq" id="para-quem" aria-labelledby="t-paraq">
+  <div class="wrap paraq-g">
+    <div class="esq">
+      <p class="label rv">Para quem</p>
+      <h2 id="t-paraq" class="rv">Para quem a cozinha comum <em>não atende</em></h2>
+      <p class="t rv">A Aline cozinha para quem precisa de mais cuidado com o que come.</p>
+      <p class="lei rv">Dieta quem prescreve é o nutricionista, por lei. A Aline cozinha o que o seu plano pede e não prescreve nem altera dietas.</p>
+    </div>
+    <ul class="rv">
+      <li><b>01</b><div><h3>Restrições alimentares</h3><p>Alergias, intolerâncias, doença celíaca. Cada caso é avaliado antes, e a comida é pensada com o cuidado que a restrição exige.</p></div></li>
+      <li><b>02</b><div><h3>Plano do nutricionista</h3><p>Você traz o plano e a Aline cozinha o que ele pede, com as quantidades e os cuidados combinados.</p></div></li>
+      <li><b>03</b><div><h3>Idosos</h3><p>Comida macia, saborosa e adaptada ao que a pessoa consegue e gosta de comer. Comida de verdade, com a cara da casa.</p></div></li>
+      <li><b>04</b><div><h3>Pós-parto</h3><p>Refeições que acolhem uma fase em que cozinhar é a última coisa possível, e comer bem é o que mais importa.</p></div></li>
+      <li><b>05</b><div><h3>Esportistas e vida fit</h3><p>Rotina de treino pede regularidade. Refeições organizadas para a semana, dentro do padrão que você já segue.</p></div></li>
+      <li><b>06</b><div><h3>Quem quer comer diferente</h3><p>Sem diagnóstico e sem plano. Só a vontade de comer melhor, com ingredientes e preparo de qualidade.</p></div></li>
+    </ul>
   </div>
 </section>
 
@@ -319,11 +353,11 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
       <p class="label rv">A chef</p>
       <h2 id="t-sobre" class="rv">Aline <em>Fonseca</em></h2>
       <p class="rv">Nasci em Vilhena, no interior de Rondônia, numa casa de cultura sulista. Cresci entre cuca doce, polenta e churrasco, e esses sabores nunca saíram de mim. Em Brusque, eles fazem parte da mesa de todo mundo.</p>
-      <p class="rv">Estudei Gastronomia em Porto Velho e passei os últimos anos cozinhando para eventos. Tenho buffet próprio e já servi quinhentas pessoas de uma vez. Mas o que mais gosto é do que acontece numa cozinha de casa: conhecer quem vai comer e cozinhar do jeito que a pessoa gosta.</p>
+      <p class="rv">Estudei Gastronomia em Porto Velho e passei anos cozinhando para eventos. Tive buffet próprio e servi até quinhentas pessoas de uma vez. Hoje escolhi o contrário: me dedico a levar qualidade alimentar direto para a casa de cada cliente, conhecendo quem vai comer e cozinhando do jeito que essa pessoa precisa.</p>
       <ul class="cred rv">
         <li><b>01</b> Técnica em Gastronomia, FIMCA, Porto Velho</li>
         <li><b>02</b> Curso de Cozinheiro, SENAC</li>
-        <li><b>03</b> Buffet próprio e eventos de até 500 pessoas</li>
+        <li><b>03</b> Anos à frente de buffet próprio e eventos de até 500 pessoas</li>
         <li><b>04</b> Chef em campanha da Le Creuset</li>
         <li><b>05</b> Já cozinhou para um presidente da República</li>
       </ul>
@@ -359,9 +393,9 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
       <div class="moldura cv"><img src="img/casa.webp" alt="Aline de touca e máscara arrumando uma mesa de jantar numa casa, com pratos e guardanapos" width="900" height="1200" loading="lazy" data-par="foto"></div>
     </div>
     <ol class="passos" id="passos">
-      <li><h3>Você conta o que gosta</h3><p>Responde a um roteiro curto sobre gostos, restrições e rotina. Leva uns três minutos.</p></li>
-      <li><h3>A Aline responde</h3><p>Ela lê tudo, diz se consegue atender e continua a conversa pelo WhatsApp.</p></li>
-      <li><h3>Combinam o resto</h3><p>Frequência, número de pessoas, ingredientes e logística. Tudo conversado antes de começar.</p></li>
+      <li><h3>Você conta o que precisa</h3><p>Responde a um roteiro curto sobre restrições, plano alimentar, gostos e rotina. Leva uns três minutos.</p></li>
+      <li><h3>A Aline avalia</h3><p>Ela lê tudo, diz se consegue atender com segurança e continua a conversa pelo WhatsApp.</p></li>
+      <li><h3>Alinham os detalhes</h3><p>Se você tem plano de nutricionista, ela recebe o plano. Combinam frequência, ingredientes e logística antes de começar.</p></li>
       <li><h3>Ela cozinha na sua casa</h3><p>A Aline vai até você, cozinha na sua cozinha e organiza as refeições conforme o combinado.</p></li>
     </ol>
   </div>
@@ -371,13 +405,25 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
   <div class="wrap">
     <div class="tri-cab">
       <p class="label rv">Pedir um lugar na agenda</p>
-      <h2 id="t-tri" class="rv">Conte o que você gosta de <em>comer</em></h2>
-      <p class="rv">Marque o que combina com você. A Aline lê antes de responder e já sabe por onde começar.</p>
+      <h2 id="t-tri" class="rv">Conte o que você <em>precisa</em> e o que gosta</h2>
+      <p class="rv">Marque o que combina com você. A Aline lê antes de responder e já sabe por onde começar. Tudo que você contar é tratado com respeito.</p>
     </div>
 
     <form id="form" novalidate>
       <div class="passo-t">
-        <p class="label">01 <small>· o que você gosta</small></p>
+        <p class="label">01 <small>· para quem é a comida</small></p>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="quem" value="Restrição alimentar"><span>Restrição alimentar</span></label>
+          <label class="chip"><input type="checkbox" name="quem" value="Plano de nutricionista"><span>Plano de nutricionista</span></label>
+          <label class="chip"><input type="checkbox" name="quem" value="Idoso(a) na casa"><span>Idoso(a) na casa</span></label>
+          <label class="chip"><input type="checkbox" name="quem" value="Pós-parto"><span>Pós-parto</span></label>
+          <label class="chip"><input type="checkbox" name="quem" value="Esportista ou vida fit"><span>Esportista ou vida fit</span></label>
+          <label class="chip"><input type="checkbox" name="quem" value="Alimentação diferenciada"><span>Quero comer diferente</span></label>
+        </div>
+      </div>
+
+      <div class="passo-t">
+        <p class="label">02 <small>· o que você gosta</small></p>
         <div class="gostos">
           <label class="gosto"><input type="checkbox" name="gosto" value="Sobremesas"><div class="moldura in"><img src="img/sobremesa.webp" alt="" width="900" height="1200" loading="lazy"></div><span class="nome">Sobremesas<i class="ck"></i></span></label>
           <label class="gosto"><input type="checkbox" name="gosto" value="Pratos autorais"><div class="moldura in"><img src="img/autoral.webp" alt="" width="900" height="1044" loading="lazy"></div><span class="nome">Pratos autorais<i class="ck"></i></span></label>
@@ -394,23 +440,24 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
       </div>
 
       <div class="passo-t">
-        <p class="label">02 <small>· restrições e cuidados</small></p>
+        <p class="label">03 <small>· restrições e cuidados</small></p>
         <div class="chips">
           <label class="chip"><input type="checkbox" name="rest" value="Sem glúten"><span>Sem glúten</span></label>
           <label class="chip"><input type="checkbox" name="rest" value="Sem lactose"><span>Sem lactose</span></label>
           <label class="chip"><input type="checkbox" name="rest" value="Vegetariano"><span>Vegetariano</span></label>
-          <label class="chip"><input type="checkbox" name="rest" value="Orientação de nutricionista ou médico"><span>Tenho orientação de nutricionista ou médico</span></label>
           <label class="chip"><input type="checkbox" name="rest" value="Alergia alimentar" id="alergia"><span>Alergia alimentar</span></label>
+          <label class="chip"><input type="checkbox" name="rest" value="Outra restrição"><span>Outra restrição</span></label>
           <label class="chip"><input type="checkbox" name="rest" value="Nenhuma"><span>Nenhuma</span></label>
         </div>
         <p class="aviso" id="aviso" role="status">Obrigada por contar. Alergias e restrições sérias a Aline avalia caso a caso, antes de aceitar, porque numa cozinha de casa utensílios e superfícies também precisam de cuidado. Se não for possível atender com segurança, ela diz.</p>
         <div class="campos" style="margin-top:34px">
-          <div class="campo full"><label for="nao">O que você não come?</label><input id="nao" name="nao" type="text" placeholder="Ex.: coentro, fígado, pimenta" autocomplete="off"></div>
+          <div class="campo full"><label for="nao">O que você não come, ou não pode comer?</label><input id="nao" name="nao" type="text" placeholder="Ex.: coentro, fígado, camarão" autocomplete="off"></div>
+          <div class="campo full"><label for="plano">Você tem plano alimentar de nutricionista?</label><select id="plano" name="plano"><option>Não tenho</option><option>Tenho e posso enviar à Aline</option><option>Vou consultar um nutricionista</option></select></div>
         </div>
       </div>
 
       <div class="passo-t">
-        <p class="label">03 <small>· sobre a sua casa</small></p>
+        <p class="label">04 <small>· sobre a sua casa</small></p>
         <div class="campos">
           <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" required autocomplete="name"></div>
           <div class="campo"><label for="local">Bairro e cidade</label><input id="local" name="local" type="text" required placeholder="Ex.: Centro, Brusque" autocomplete="off"></div>
@@ -418,7 +465,7 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
             <select id="pessoas" name="pessoas"><option>1 ou 2</option><option>3 ou 4</option><option>5 ou mais</option></select></div>
           <div class="campo"><label for="freq">Frequência</label>
             <select id="freq" name="freq"><option>Toda semana</option><option>A cada 15 dias</option><option>Algumas vezes por mês</option><option>Ainda não sei</option></select></div>
-          <div class="campo full"><label for="obs">Quer contar mais alguma coisa?</label><textarea id="obs" name="obs" rows="2" placeholder="Rotina, o que sente falta de comer em casa, uma ocasião especial"></textarea></div>
+          <div class="campo full"><label for="obs">Quer contar mais alguma coisa?</label><textarea id="obs" name="obs" rows="2" placeholder="Rotina, o que sente falta de comer em casa, algo que a Aline precise saber"></textarea></div>
         </div>
         <p class="erro" id="erro" role="alert"></p>
       </div>
@@ -436,8 +483,9 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
     <div><p class="label">Perguntas</p><h2 id="t-faq">O que costumam <em>perguntar</em></h2></div>
     <div>
       <details><summary>A Aline cozinha na minha casa?</summary><div class="resp"><p>Sim. Ela leva a técnica e o jeito dela para a sua cozinha e cozinha ali, com o que combinarem.</p></div></details>
-      <details><summary>Preciso seguir alguma dieta?</summary><div class="resp"><p>Não. Quem quer comer melhor, sem precisar pensar em tudo, também é bem-vindo. Se você tem orientação de nutricionista ou médico, ela cozinha a partir dela. A Aline não prescreve dietas.</p></div></details>
-      <details><summary>E se eu tiver alergia ou intolerância?</summary><div class="resp"><p>Conte na hora de pedir o seu lugar. Cada caso é avaliado antes de qualquer combinação. Em casa, utensílios e superfícies precisam de atenção, e nem toda alergia grave dá para atender com segurança. Se não der, ela diz.</p></div></details>
+      <details><summary>A Aline monta dietas?</summary><div class="resp"><p>Não. Por lei, prescrever dieta é função do nutricionista. A Aline cozinha o que o seu plano pede, com as quantidades e os cuidados combinados, e conversa com o seu nutricionista se você quiser.</p></div></details>
+      <details><summary>Preciso ter restrição ou plano?</summary><div class="resp"><p>Não. Quem só quer comer melhor, sem precisar pensar em tudo, também é bem-vindo. O mesmo vale para idosos, mulheres no pós-parto e quem treina e quer regularidade.</p></div></details>
+      <details><summary>E se eu tiver alergia ou intolerância?</summary><div class="resp"><p>Conte na hora de pedir o seu lugar. Cada caso é avaliado antes de qualquer combinação. Em casa, utensílios e superfícies precisam de atenção, e nem toda alergia grave dá para atender com segurança. Se não der, ela diz com clareza.</p></div></details>
       <details><summary>Quem compra os ingredientes?</summary><div class="resp"><p>Isso é combinado antes. Pode ser você, ou a própria Aline, com prestação de contas e taxa de serviço informada previamente.</p></div></details>
       <details><summary>Quanto custa?</summary><div class="resp"><p>Depende do número de pessoas, da frequência e do que for combinado. Por isso o valor é definido na conversa, com clareza antes de começar.</p></div></details>
       <details><summary>Com que frequência ela vai?</summary><div class="resp"><p>Toda semana, a cada quinze dias ou como combinarem. A agenda é pequena de propósito, para que cada casa tenha atenção de verdade.</p></div></details>
@@ -469,7 +517,7 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
       <div><h4>Contato</h4><ul><li><a href="https://wa.me/5569996000030?text=Ol%C3%A1%2C%20Aline%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (69) 99600-0030</a></li><li><a href="https://instagram.com/chefalinefonseca01_" target="_blank" rel="noopener">@chefalinefonseca01_</a></li></ul></div>
       <div><h4>Atendimento</h4><ul><li>Brusque e região, SC</li><li>Na sua casa</li></ul></div>
     </div>
-    <p class="cr">© Aline Fonseca · Personal Chef. A chef cozinha a partir das orientações que você já tem e não substitui nutricionista ou médico.</p>
+    <p class="cr">© Aline Fonseca · Personal Chef. A Aline não prescreve dietas: isso é função do nutricionista. Ela cozinha a partir do plano que você já tem e não substitui profissional de saúde.</p>
   </div>
 </footer>
 
@@ -550,11 +598,13 @@ footer{background:var(--noite);color:var(--creme);padding:56px 0 calc(40px + env
     var msg='Olá, Aline! Vim pelo seu site e gostaria de um lugar na sua agenda.\n\n'+
       'Nome: '+nome+'\n'+
       'Bairro e cidade: '+local+'\n'+
+      'Para quem é a comida: '+(vals('quem').length?vals('quem').join(', '):'não informei')+'\n'+
+      'Plano de nutricionista: '+form.plano.value+'\n'+
       'Pessoas na casa: '+form.pessoas.value+'\n'+
       'Frequência: '+form.freq.value+'\n'+
       'O que eu gosto: '+(g.length?g.join(', '):'ainda não marquei')+'\n'+
       'Restrições: '+(r.length?r.join(', '):'não informei')+'\n'+
-      (form.nao.value.trim()?'Não como: '+form.nao.value.trim()+'\n':'')+
+      (form.nao.value.trim()?'Não como ou não posso comer: '+form.nao.value.trim()+'\n':'')+
       (form.obs.value.trim()?'Mais um detalhe: '+form.obs.value.trim()+'\n':'')+
       '\nPodemos conversar?';
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');

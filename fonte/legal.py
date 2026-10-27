@@ -1,0 +1,144 @@
+import html
+import re
+WA_VIS=re.search(r"VIS=\"([^\"]+)\"",open("build.py").read()).group(1)
+ATUAL="27 de outubro de 2026"
+CSS="""
+:root{--verde:#2F4A3A;--verde-esc:#1F3328;--creme:#EAD8B6;--osso:#F7F0E2;--tinta:#1b2a21;--suave:#56665b;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.75;color:var(--tinta);background:var(--osso);-webkit-font-smoothing:antialiased}
+a{color:var(--verde)}
+header{background:var(--verde-esc);color:var(--creme)}
+.hd{width:min(920px,100% - 40px);margin:auto;display:flex;align-items:center;justify-content:space-between;height:76px}
+.hd a{color:var(--creme);text-decoration:none}
+.hd .m{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:1.2rem;letter-spacing:.14em;text-transform:uppercase}
+.hd .m img{height:36px}
+.hd .v{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid var(--creme);padding-bottom:3px}
+main{width:min(760px,100% - 40px);margin:0 auto;padding:clamp(50px,9vw,110px) 0}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--verde);font-weight:400}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.04;color:var(--verde);margin:14px 0 10px}
+.upd{color:var(--suave);font-size:.92rem;margin-bottom:44px}
+h2{font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.15;color:var(--verde);margin:44px 0 12px}
+p,li{margin-bottom:14px}
+ul{padding-left:1.2em}
+.box{border-left:2px solid var(--verde);padding:4px 0 4px 20px;margin:26px 0;color:var(--tinta)}
+footer{border-top:1px solid rgba(47,74,58,.25);padding:30px 0 50px;text-align:center;font-size:.9rem;color:var(--suave)}
+footer a{margin:0 10px}
+"""
+def page(titulo,eyebrow,corpo,outro):
+    return f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{titulo} · Aline Fonseca</title>
+<meta name="theme-color" content="#2F4A3A"><link rel="icon" href="img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>{CSS}</style></head><body>
+<header><div class="hd"><a class="m" href="./"><img src="img/monograma-creme.png" alt="">Aline Fonseca</a><a class="v" href="./">Voltar ao site</a></div></header>
+<main><p class="eyebrow">{eyebrow}</p><h1>{titulo}</h1><p class="upd">Atualizado em {ATUAL}</p>
+{corpo}
+</main>
+<footer><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a><a href="./">Início</a></footer>
+</body></html>"""
+
+PRIV=f"""
+<p>Esta política explica, em linguagem simples, como o site de Aline Fonseca, personal chef em Brusque e região (SC), trata os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, a LGPD).</p>
+<div class="box">Resumo: este site não tem cadastro, banco de dados nem cookies de rastreamento. O que você preenche na triagem só sai do seu aparelho quando você toca em enviar no WhatsApp, e a conversa é com a própria Aline.</div>
+
+<h2>1. Quem é a responsável</h2>
+<p>A controladora dos dados é Aline Fonseca, personal chef, que atende em Brusque e região, SC. Para qualquer assunto sobre seus dados, fale com ela pelo WhatsApp {WA_VIS} ou pelo Instagram @chefalinefonseca01_.</p>
+
+<h2>2. Quais dados são tratados</h2>
+<p><b>O que você informa na triagem:</b> nome, bairro e cidade, número de pessoas na casa, frequência desejada, o que você gosta de comer, o grau da sua restrição (preferência, intolerância, alergia ou alergia grave), os alimentos que você evita, observações livres e as demais opções que você marcar.</p>
+<p><b>Dados sensíveis:</b> informações sobre restrições alimentares, alergias, plano alimentar de nutricionista, fase de vida (como pós-parto) ou condição que você escolha contar podem revelar dados de saúde, que a LGPD classifica como sensíveis (art. 5º, II, e art. 11). Você decide o que informar. Quanto menos detalhe, menos dados; conte só o necessário para a Aline avaliar o atendimento com segurança.</p>
+<p><b>Dados de terceiros:</b> se você informar dados de outra pessoa (por exemplo, um familiar idoso), declara ser responsável por ela ou ter a autorização necessária.</p>
+<p><b>Dados técnicos:</b> a hospedagem do site (Vercel) pode registrar automaticamente dados de acesso, como endereço IP, navegador e data e hora. As fontes de letra são carregadas do Google Fonts, que também recebe o seu IP nesse momento.</p>
+<p><b>O que não fazemos:</b> o site não usa cookies de publicidade ou de rastreamento, não grava o que você digita no formulário em nenhum servidor e não envia dados de saúde a nenhuma ferramenta de medição.</p>
+<p><b>Medição de audiência:</b> usamos o Vercel Web Analytics, que não usa cookies, não cria perfil individual e não identifica você. Ele conta visitas, páginas, origem, tipo de aparelho e país, e registra ações genéricas, como clicar em "Quero saber mais" ou enviar a triagem, sem o conteúdo do que você preencheu. A finalidade é entender se o site está claro e melhorá-lo (legítimo interesse, LGPD art. 7º, IX).</p>
+
+<h2>3. Como a triagem funciona</h2>
+<p>O formulário monta uma mensagem de texto no seu próprio navegador e abre o WhatsApp com ela pronta. Nada é enviado até você tocar em enviar dentro do WhatsApp. A partir daí, a conversa fica entre você e a Aline, e o WhatsApp (Meta) trata os dados conforme os termos e a política dele.</p>
+
+<h2>4. Para que usamos os dados e em que base legal</h2>
+<ul>
+<li><b>Responder ao seu contato e avaliar se é possível atender você.</b> Base: procedimentos preliminares relacionados a um possível contrato, a seu pedido (LGPD, art. 7º, V).</li>
+<li><b>Combinar e realizar o atendimento, se vocês fecharem.</b> Base: execução de contrato (art. 7º, V).</li>
+<li><b>Tratar dados de saúde que você informar,</b> para que a comida seja preparada com segurança e cuidado. Base: o seu consentimento específico e destacado (art. 11, I), dado ao marcar a caixa de aceite do formulário. Você pode retirar esse consentimento a qualquer momento.</li>
+<li><b>Cumprir obrigações legais ou proteger direitos</b> quando necessário (art. 7º, II e VI).</li>
+</ul>
+<p>Não vendemos seus dados, não os usamos para publicidade de terceiros e não os usamos para decisões automatizadas.</p>
+
+<h2>5. Com quem os dados podem ser compartilhados</h2>
+<ul>
+<li><b>WhatsApp (Meta):</b> meio da conversa.</li>
+<li><b>Vercel:</b> hospedagem do site.</li>
+<li><b>Google Fonts:</b> fontes de letra.</li>
+<li><b>Seu nutricionista ou outros profissionais:</b> somente se você pedir ou autorizar.</li>
+<li><b>Autoridades:</b> quando a lei exigir.</li>
+</ul>
+<p>Alguns desses provedores ficam no exterior, o que pode envolver transferência internacional de dados (LGPD, art. 33), feita com as salvaguardas que eles adotam.</p>
+
+<h2>5-A. Fotos e vídeos dos pratos (opcional)</h2>
+<p>Com autorização separada e opcional (a recusa não altera o atendimento), a Aline pode registrar pratos, preparo e panelas para divulgação no Instagram e no site. Não são exibidos a casa, moradores, rostos, endereço, nem qualquer dado de saúde. A autorização pode ser retirada a qualquer momento, e o conteúdo é removido em até 7 dias.</p>
+
+<h2>6. Por quanto tempo guardamos</h2>
+<p>A conversa e as informações ficam pelo tempo necessário para avaliar, combinar e realizar o atendimento com segurança, e para cumprir obrigações legais. Depois disso, ou quando você pedir, os dados são apagados, ressalvados os casos em que a lei exige a guarda.</p>
+
+<h2>7. Seus direitos</h2>
+<p>Pela LGPD (art. 18), você pode, a qualquer momento e gratuitamente: confirmar se tratamos seus dados; acessá-los; corrigi-los; pedir anonimização, bloqueio ou eliminação do que for desnecessário ou excessivo; pedir portabilidade; saber com quem compartilhamos; retirar o consentimento; e se opor a um tratamento. Para exercer qualquer direito, basta pedir pelo WhatsApp {WA_VIS}. Se achar que seus direitos não foram respeitados, você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+<h2>8. Segurança</h2>
+<p>Como o site não guarda os dados do formulário, o principal risco está fora dele. As conversas do WhatsApp usam criptografia de ponta a ponta. A Aline mantém o acesso ao aparelho e à conversa restrito a ela e adota cuidados razoáveis para evitar acesso indevido.</p>
+
+<h2>9. Menores de idade</h2>
+<p>O site é voltado a adultos. Não coletamos dados de menores de 18 anos de propósito. Se isso acontecer, o responsável pode pedir a exclusão pelo mesmo canal.</p>
+
+<h2>10. Mudanças nesta política</h2>
+<p>Podemos atualizar este texto quando o site ou a lei mudarem. A data no topo mostra a última revisão.</p>
+"""
+
+TERMOS=f"""
+<p>Ao usar este site, você concorda com os termos abaixo. Eles explicam o que o site é, como funciona o pedido de atendimento e quais são os limites do serviço de Aline Fonseca, personal chef em Brusque e região (SC).</p>
+
+<h2>1. O que é este site</h2>
+<p>É uma página de apresentação do trabalho da Aline e um jeito de pedir contato. Preencher a triagem e enviar a mensagem não contrata o serviço, não reserva vaga e não garante atendimento. As vagas são poucas e a Aline avalia cada pedido antes de responder.</p>
+
+<h2>2. O que a Aline faz, e o que não faz</h2>
+<p>A Aline é cozinheira profissional e prepara refeições na casa do cliente e deixa tudo pronto; ela não faz serviço de mesa. Em pequenos eventos em casa, pode fazer os preparos e, se necessário, indicar um garçom. <b>Ela não prescreve nem altera dietas.</b> Prescrever dieta é atividade privativa do nutricionista (Lei Federal nº 8.234/1991, art. 3º, VIII). Quando o cliente tem um plano de nutricionista, a Aline cozinha o que o plano pede, nas quantidades e com os cuidados combinados. O serviço não substitui acompanhamento de nutricionista, médico ou outro profissional de saúde, e não promete resultado de saúde, emagrecimento ou desempenho.</p>
+
+<h2>3. Alergias, intolerâncias e restrições</h2>
+<ul>
+<li>Informe de forma completa e verdadeira tudo o que for relevante. Informações incompletas podem comprometer a segurança.</li>
+<li>Cada caso é avaliado individualmente, antes de qualquer combinação.</li>
+<li>Cozinhas de casa têm limites, como utensílios e superfícies compartilhados. Por isso a Aline pode recusar ou interromper o atendimento quando não for possível garantir segurança, e dirá isso com clareza.</li>
+<li>Mudanças de saúde, novos diagnósticos e alterações de plano devem ser comunicadas assim que ocorrerem.</li>
+</ul>
+
+<h2>4. Combinados do atendimento</h2>
+<p>O atendimento acontece na cozinha do cliente e depende de alguns combinados: cozinha disponível durante todo o período, liberdade para a Aline acessar o que for preciso (geladeira, freezer, armários, panelas e utensílios), ingredientes definidos previamente e itens congelados já descongelados conforme o protocolo. Os detalhes estão em <a href="como-funciona.html">Como funciona</a>.</p>
+
+<p>Antes do primeiro atendimento, o combinado é formalizado em um contrato simples, que trata do acesso à casa e à cozinha, de acidentes e danos (como itens quebrados sem querer) e do uso de imagem. O uso de imagem é sempre opcional e separado: fotos e vídeos se limitam aos pratos, ao preparo e às panelas, sem mostrar a casa, os moradores ou dados do cliente, e a autorização pode ser retirada a qualquer momento.</p>
+
+<h2>5. Valores e condições</h2>
+<p>Valores, frequência, ingredientes e logística são combinados individualmente com a Aline, de forma clara e antes de começar. Nada neste site é uma oferta com preço ou condição vinculante.</p>
+
+<h2>6. Conteúdo do site</h2>
+<p>As fotos, a marca, a logo e os textos pertencem à Aline Fonseca ou são usados com autorização. Não podem ser copiados, reproduzidos ou usados comercialmente sem permissão por escrito.</p>
+
+<h2>7. Uso adequado</h2>
+<p>Use o site de boa-fé. Não envie informações falsas, não tente prejudicar o funcionamento do site e não use o contato para fins ilícitos ou para assediar.</p>
+
+<h2>8. Links e serviços de terceiros</h2>
+<p>O site leva a serviços de terceiros, como WhatsApp e Instagram, que têm termos e políticas próprios. A Aline não controla esses serviços.</p>
+
+<h2>9. Disponibilidade e responsabilidade</h2>
+<p>Fazemos o possível para manter o site disponível e correto, mas ele pode ficar fora do ar ou conter imprecisões. Isso não exclui as responsabilidades que a lei prevê, inclusive as do Código de Defesa do Consumidor.</p>
+
+<h2>10. Privacidade</h2>
+<p>O tratamento dos seus dados está descrito na <a href="privacidade.html">Política de Privacidade</a>.</p>
+
+<h2>11. Lei aplicável e foro</h2>
+<p>Estes termos seguem as leis brasileiras. Fica eleito o foro da comarca de Brusque, SC, ressalvado o direito do consumidor de propor ação no foro do seu domicílio.</p>
+
+<h2>12. Mudanças e contato</h2>
+<p>Estes termos podem ser atualizados, e a data no topo mostra a última revisão. Dúvidas: WhatsApp {WA_VIS} ou Instagram @chefalinefonseca01_.</p>
+"""
+open('../privacidade.html','w').write(page('Política de Privacidade','LGPD',PRIV,''))
+open('../termos.html','w').write(page('Termos de Uso','Termos',TERMOS,''))

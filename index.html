@@ -450,9 +450,29 @@
       (form.obs.value.trim()?'Mais um detalhe: '+form.obs.value.trim()+'\n':'')+
       'Li como funciona: sim, ciente dos combinados (acesso à cozinha, ingredientes em casa, descongelamento, contrato).\n'+
       'Fotos/vídeos dos pratos para divulgação: '+($('#img').checked?'autorizo (só pratos, preparo e panelas, sem mostrar a casa)':'não autorizo')+'\n\nPodemos conversar?';
+    window.track&&window.track('triagem_envio');
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
   });
 })();
 </script>
+<script>
+/* medição sem cookies (Vercel Web Analytics): só eventos de navegação, nunca dados de saúde */
+window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+window.track=function(n,p){try{window.va('event',p?{name:n,data:p}:{name:n})}catch(e){}};
+(function(){
+  var MAP=[['wa.me','whatsapp_direto'],['#triagem','ir_triagem'],['como-funciona','abrir_como_funciona'],['#como','cta_saber_mais'],['instagram.com','instagram'],['privacidade','ver_privacidade'],['termos','ver_termos']];
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a');if(!a)return;
+    var h=a.getAttribute('href')||'';
+    for(var i=0;i<MAP.length;i++){if(h.indexOf(MAP[i][0])>-1){window.track(MAP[i][1],{pagina:location.pathname});break}}
+  },true);
+  var f=document.getElementById('form');
+  if(f){var ini=false;f.addEventListener('input',function(){if(!ini){ini=true;window.track('triagem_inicio')}});}
+  var secs=[['como','viu_como_funciona'],['triagem','viu_triagem']],vistos={};
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&!vistos[x.target.id]){vistos[x.target.id]=1;window.track(x.target.dataset.ev)}})},{threshold:.35});
+    secs.forEach(function(s){var el=document.getElementById(s[0]);if(el){el.dataset.ev=s[1];io.observe(el)}});}
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

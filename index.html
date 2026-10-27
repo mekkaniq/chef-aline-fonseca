@@ -367,9 +367,9 @@
   window.addEventListener('load',function(){sizeHz();frame()});
   sizeHz();frame();
 
-  /* fundo animado do hero (shader próprio, só desktop) */
+  /* fundo animado do hero (shader próprio) */
   (function(){
-    var cv=$('#sh');if(!cv||reduce||!window.matchMedia('(min-width: 821px)').matches)return;
+    var cv=$('#sh');if(!cv||reduce)return;
     var start=function(){
       var gl;try{gl=cv.getContext('webgl',{antialias:false,alpha:false,powerPreference:'low-power'})}catch(e){}
       if(!gl){cv.remove();return}

@@ -14,6 +14,10 @@ def paths(t):
     t=re.sub(r'(src|href)="(img/|js/)',r'\1="/\2',t)
     t=t.replace('src="decor.js"','src="/decor.js"')
     t=t.replace('href="privacidade.html"','href="/privacidade"').replace('href="termos.html"','href="/termos"')
+    # tudo do beta com endereço completo: /beta e /beta/ precisam carregar os mesmos arquivos
+    t=t.replace('href="style.css"','href="/beta/style.css"').replace('href="css/','href="/beta/css/')
+    t=t.replace('href="como-funciona.html"','href="/beta/como-funciona"').replace('href="./#','href="/beta/#').replace('href="./"','href="/beta/"')
+    t=t.replace('<a href="/">Voltar ao início</a>','<a href="/beta/">Voltar ao início</a>')
     return t
 shutil.rmtree('beta',ignore_errors=True); os.makedirs('beta/css')
 for f in ['index.html','como-funciona.html','obrigado.html']:
@@ -37,6 +41,7 @@ open('beta/index.html','w').write(t); print('hero ok')
 js=open('js/home.js').read()
 for a,b in [('vec3(.557,.608,.471)','vec3(.690,.290,.290)'),('vec3(.184,.290,.227)','vec3(.588,.188,.188)')]:
     assert a in js, a; js=js.replace(a,b)
+js=js.replace("location.href='obrigado'","location.href='/beta/obrigado'")
 os.makedirs('beta/js',exist_ok=True); open('beta/js/home.js','w').write(js)
 t=open('beta/index.html').read().replace('src="/js/home.js"','src="/beta/js/home.js"'); open('beta/index.html','w').write(t)
 print('shader ok')

@@ -121,7 +121,7 @@ function quadro(){
       var rot=-28+ease(p)*560+Math.sin(p*Math.PI*6)*8;
       f.style.transform='translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px) rotate('+rot.toFixed(1)+'deg)';
       f.style.opacity=(p<.06?p/.06:p>.92?(1-p)/.08:1).toFixed(2);
-      var d=1-cl(p*4.5); for(var i=0;i<paths.length;i++) paths[i].style.strokeDashoffset=cl(d+i*.04).toFixed(3);
+      for(var i=0;i<paths.length;i++){var of=cl(1-(p*4.5-i*.08)); paths[i].style.strokeDashoffset=of.toFixed(3); paths[i].style.strokeDasharray=of<=0?'none':'1'} /* cada traço começa um pouco depois; pronto, o tracejado sai (o Chrome erra o tracejado girando) */
       var cy=ty+fh/2, sec=null;
       [mani,vit].forEach(function(s){if(!s)return;var rr=s.getBoundingClientRect(); if(cy>=rr.top&&cy<rr.bottom) sec=s});
       f.classList.toggle('claro',!!(sec&&sec.classList.contains('on-light')));

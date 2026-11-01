@@ -1,5 +1,5 @@
 import urllib.parse,re,os
-SITE='https://chef-aline-fonseca.vercel.app'   # trocar para https://chefalinefonseca.com.br quando o domínio estiver ativo
+SITE='https://chefalinefonseca.com.br'
 NUM="5569996000030"; VIS="(69) 99600-0030"
 msg=urllib.parse.quote("Olá, Aline! Vim pelo seu site e gostaria de saber mais.")
 def tok(s):
@@ -37,6 +37,6 @@ import legal
 for f,n in (('privacidade','privacidade'),('termos','termos')):
     p=f'../{f}.html'; t=open(p).read(); open(p,'w').write(ext(t,'legal'))
 # SEO
-open('../robots.txt','w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
+open('../robots.txt','w').write(f'User-agent: *\nAllow: /\nDisallow: /beta/\nSitemap: {SITE}/sitemap.xml\n')
 urls=['/','/como-funciona','/privacidade','/termos']
 open('../sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{SITE}{u}</loc></url>\n' for u in urls)+'</urlset>\n')

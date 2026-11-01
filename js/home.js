@@ -138,7 +138,10 @@
       'Li como funciona: sim, ciente dos combinados (acesso à cozinha, ingredientes em casa, descongelamento, contrato).\n'+
       'Fotos/vídeos dos pratos para divulgação: '+($('#img').checked?'autorizo (só pratos, preparo e panelas, sem mostrar a casa)':'não autorizo')+'\n\nPodemos conversar?';
     window.track&&window.track('triagem_envio');
-    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+    var url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+    var w=window.open(url,'_blank');
+    /* com 'noopener' o navegador sempre devolve null, então a aba é aberta sem ele e o vínculo é cortado na mão */
+    if(w){try{w.opener=null}catch(e){}setTimeout(function(){location.href='obrigado'},400)}else{location.href=url}
   });
 })();
 ;

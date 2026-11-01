@@ -138,7 +138,8 @@ footer{position:relative}
 .cred li{padding:17px 0;border-bottom:1px solid rgba(47,74,58,.35);display:flex;gap:20px;align-items:baseline;font-size:1.02rem}
 .traj{margin-top:54px}
 .traj .label{color:var(--verde);margin-bottom:16px}
-.traj-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.traj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.traj-g figcaption{margin-top:8px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--suave)}
 .traj-g .moldura{aspect-ratio:4/3}
 .traj-g .moldura img{height:100%;aspect-ratio:auto}
 .traj-n{margin-top:14px;font-size:.92rem;color:var(--suave);max-width:30em}

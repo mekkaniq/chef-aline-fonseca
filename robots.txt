@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://chef-aline-fonseca.vercel.app/sitemap.xml
+Disallow: /beta/
+Sitemap: https://chefalinefonseca.com.br/sitemap.xml
